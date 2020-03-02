@@ -1,0 +1,7 @@
+node {
+	checkout scm 
+	docker.withRegistry('https://registry.hub.docker.com','Dhub') {
+		def custom_img = docker.build("996622/DockerJenkinsNginxWeb")
+		custom_img.push()
+	}
+}
